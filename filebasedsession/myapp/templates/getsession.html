@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Session</title>
+    <style>
+        body {
+            background-color: #f0f8ff; /* Light blue background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        input[type="button"] {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+        
+        input[type="button"]:hover {
+            background-color: #45a049; /* Darker green */
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+    <h1>Session Get</h1>
+    {{name}}  <br>
+    {{request.session.get_session_cookie_age}} <br>
+    {{request.session.get_expiry_age}} <br>
+    {{request.session.get_expiry_date}} <br>
+    {{request.session.get_expiry_at_browser_close}} <br>
+    <a href="{% url 'del' %}"><input type="button" value="DelSession"></a>
+    <a href="{% url 'home' %}"><input type="button" value="home"></a>
+    </div>
+</body>
+</html>
